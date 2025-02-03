@@ -1,0 +1,17 @@
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+config SHIELD_CHARYBDIS_LEFT
+    def_bool $(shields_list_contains,charybdis_left)
+
+config SHIELD_CHARYBDIS_RIGHT
+    def_bool $(shields_list_contains,charybdis_right)
+
+config SHIELD_CHARYBDIS_LEFT_PERIPHERAL
+    def_bool $(shields_list_contains,charybdis_left_peripheral)
+
+config SHIELD_CHARYBDIS_DONGLE_XIAO
+    def_bool $(shields_list_contains,charybdis_dongle_xiao)
+
+config SHIELD_CHARYBDIS_DONGLE_PRO_MICRO
+    def_bool $(shields_list_contains,charybdis_dongle_pro_micro)
