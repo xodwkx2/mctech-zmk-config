@@ -21,17 +21,21 @@
         ;
 };
 
-&sh1107 {
-    compatible = "solomon,sh1107fb";
-    label = "SH1107";
-    width = <64>;
-    height = <128>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <127>;
-    reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
-    i2c-max-frequency = <400000>;
-    i2c-scl-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
-    i2c-sda-gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
+&pro_micro_i2c {
+    status = "okay";
+    
+    oled: sh1107@3c {
+        compatible = "solomon,sh1107fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <64>;
+        segment-remap;
+        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
+    };
 };
